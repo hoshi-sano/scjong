@@ -2,15 +2,51 @@
 <html>
   <head>
     <meta charset= "utf-8" />
-    <title>DXOpal game</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>SCJONG</title>
     <script type="text/javascript" src="vendor/dxopal.min.js"></script>
     <script type="text/ruby">
-      DXOpal.dump_error{ require_remote "src/main.rb?#{Time.now}" }
+      DXOpal.dump_error{ require_remote "src/main.rb?#{Time.now.to_i}" }
     </script>
+    <style>
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+
+      #contents-header {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      #dxopal-canvas-wrapper {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        margin: 0;
+      }
+
+      #dxopal-canvas {
+        aspect-ratio: auto 1136 / 640;
+        height: 100%;
+      }
+    </style>
   </head>
 
   <body>
-    <canvas id="dxopal-canvas"></canvas>
+    <div id="contents-header">
+      <a href="https://github.com/hoshi-sano/scjong">github.com/hoshi-sano/scjong</a>
+    </div>
+
+    <div id="dxopal-canvas-wrapper">
+      <canvas id="dxopal-canvas"></canvas>
+    </div>
+
     <div id="dxopal-errors"></div>
   </body>
 </html>
